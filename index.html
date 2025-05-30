@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davileen Price Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">Huduma za <strong>DaviLeen Company Ltd</strong></h2>
+
+    <!-- Widgets -->
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="widget">
+          <span class="material-symbols-outlined widget-icon">assignment</span>
+          <div>
+            <h6 class="mb-0">Huduma Zilizopo</h6>
+            <small id="totalServices">0</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <span class="material-symbols-outlined widget-icon">sell</span>
+          <div>
+            <h6 class="mb-0">Bei ya Chini</h6>
+            <small id="minPrice">-</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <span class="material-symbols-outlined widget-icon">price_check</span>
+          <div>
+            <h6 class="mb-0">Bei ya Juu</h6>
+            <small id="maxPrice">-</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <aside class="col-md-3 mb-4">
+        <!-- Filters -->
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Tafuta huduma...">
+        <select id="categoryFilter" class="form-select mb-3">
+          <option value="">Aina ya Huduma</option>
+          <option value="biashara">Biashara</option>
+          <option value="tra">TRA</option>
+          <option value="it">IT</option>
+        </select>
+        <label for="priceRange" class="form-label">Bei (0 - <span id="priceMax">1,000,000</span>)</label>
+        <input type="range" class="form-range" min="0" max="1000000" step="50000" id="priceRange">
+        <div id="priceValue" class="small text-muted">TSh 0 - TSh 1,000,000</div>
+        <button id="exportPdf" class="btn btn-outline-secondary w-100 mt-3">Pakua PDF</button>
+      </aside>
+      <div class="col-md-9">
+        <!-- Services Grid -->
+        <div class="row" id="servicesContainer"></div>
+      </div>
+    </div>
+
+    <!-- Subscribe -->
+    <div class="mt-5 text-center">
+      <h5>Jisajili Kupokea Taarifa Mpya</h5>
+      <div class="input-group mb-3 justify-content-center">
+        <span class="input-group-text">+255</span>
+        <input type="tel" pattern="[0-9]{9}" class="form-control w-auto" placeholder="Namba ya simu bila 0">
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
